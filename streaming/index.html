@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamCatalog - Catálogo de Filmes e Séries</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-play-circle"></i>
+                <h1>StreamCatalog</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#movies" class="nav-link">Filmes</a></li>
+                    <li><a href="#series" class="nav-link">Séries</a></li>
+                    <li><a href="#recent" class="nav-link">Lançamentos</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar filmes e séries...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Descubra os Melhores Filmes e Séries</h2>
+                <p>Explore nosso catálogo completo com os lançamentos mais recentes do cinema e as séries mais populares</p>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <div class="container">
+                <h3>Filtrar por:</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="popular">Populares</button>
+                    <button class="filter-btn" data-filter="now_playing">Em Cartaz</button>
+                    <button class="filter-btn" data-filter="upcoming">Próximos Lançamentos</button>
+                    <button class="filter-btn" data-filter="top_rated">Mais Bem Avaliados</button>
+                </div>
+                <div class="genre-filters">
+                    <select id="genreSelect">
+                        <option value="">Todos os Gêneros</option>
+                    </select>
+                    <select id="yearSelect">
+                        <option value="">Todos os Anos</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movies Grid -->
+        <section class="movies-section" id="movies">
+            <div class="container">
+                <h2>Catálogo de Filmes</h2>
+                <div class="loading" id="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Carregando filmes...</p>
+                </div>
+                <div class="movies-grid" id="moviesGrid">
+                    <!-- Movies will be loaded here -->
+                </div>
+                <button class="load-more-btn" id="loadMoreBtn" style="display: none;">Carregar Mais</button>
+            </div>
+        </section>
+
+        <!-- Recent Releases Section -->
+        <section class="recent-releases" id="recent">
+            <div class="container">
+                <h2>Lançamentos Recentes do Cinema</h2>
+                <div class="recent-grid" id="recentGrid">
+                    <!-- Recent releases will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Movie Modal -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Movie details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 StreamCatalog. Dados fornecidos por <a href="https://www.themoviedb.org/" target="_blank">The Movie Database (TMDB)</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

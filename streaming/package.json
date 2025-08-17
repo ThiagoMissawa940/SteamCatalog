@@ -1,0 +1,19 @@
+{
+  "name": "streaming-catalog",
+  "version": "1.0.0",
+  "description": "Website de catálogo de streaming usando TMDB API",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "streaming",
+    "movies",
+    "tmdb",
+    "catalog"
+  ],
+  "author": "Streaming Catalog",
+  "license": "MIT",
+  "homepage": "."
+}
